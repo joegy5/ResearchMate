@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv  # 👈 load .env variables
+from dotenv import load_dotenv
 from pypdf import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -7,7 +7,7 @@ from langchain.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.docstore.document import Document
-from langchain_groq import ChatGroq  # 👈 Groq LLM integration
+from langchain_groq import ChatGroq
 
 load_dotenv()
 
