@@ -59,7 +59,7 @@ def build_vectorstore_from_pdf(pdf_path, persist_dir=PERSIST_DIRECTORY,
     return vectordb
 
 def make_chat_chain(vectordb, llm_model=LLM_MODEL_NAME):
-    llm = ChatGroq(model=llm_model, temperature=0.0)  # 👈 uses GROQ_API_KEY automatically
+    llm = ChatGroq(model=llm_model, temperature=0.0)
     retriever = vectordb.as_retriever(search_type="similarity", search_kwargs={"k":4})
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     chain = ConversationalRetrievalChain.from_llm(llm, retriever, memory=memory)
